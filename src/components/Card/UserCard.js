@@ -106,7 +106,7 @@ const UserCard = ({ name, email, contact, address }) => {
           horizontal: "right",
         }}
       >
-        <div style={{ width: "120px", height: "120px" }}>
+        <div style={{ width: "120px", height: "120px", padding: "10px" }}>
           <div className="popItem">
             <EditIcon /> <h4>Edit</h4>{" "}
           </div>

@@ -1,5 +1,5 @@
-.feed__cbtn {
-  margin-top: 37vh;
+.create__cbtn {
+  margin-top: 15px;
   border: none;
   height: 50px;
   width: 120px;
@@ -9,7 +9,7 @@
   color: #ffcddd;
   font-weight: 600;
 }
-.feed__cbtn:hover {
+.create__cbtn:hover {
   background-color: #b762c1;
   color: #8946a6;
 }

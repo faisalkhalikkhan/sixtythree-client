@@ -1,15 +1,16 @@
 import "./App.css";
 import Feed from "./components/Feed/Feed";
+import UserForm from "./components/Form/UserForm";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <div className="app">
-      <NavBar />
+      <NavBar text="Home" />
       <section>
-        <h1>Main Feed</h1>
         <div className="box">
           <Feed />
+          {/* <UserForm /> */}
         </div>
       </section>
       {/* <footer></footer> */}

@@ -16,21 +16,7 @@
 .threeDot {
   flex: 0.1;
 }
-.feed__cbtn {
-  margin-top: 37vh;
-  border: none;
-  height: 50px;
-  width: 120px;
-  padding: 5px;
-  border-radius: 15px;
-  background-color: #8946a6;
-  color: #ffcddd;
-  font-weight: 600;
-}
-.feed__cbtn:hover {
-  background-color: #b762c1;
-  color: #8946a6;
-}
+
 .popBox {
   padding: 15px;
   display: flex;
@@ -41,4 +27,6 @@
 }
 .popItem {
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
