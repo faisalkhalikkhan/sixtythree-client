@@ -10,7 +10,11 @@ section {
 .box {
   width: 50%;
   height: 70vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.box::-webkit-scrollbar {
+  display: none;
 }

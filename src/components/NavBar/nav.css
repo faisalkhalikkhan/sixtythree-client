@@ -7,3 +7,6 @@
   margin-bottom: 10px;
   color: #ffcddd;
 }
+#add__user {
+  cursor: pointer;
+}

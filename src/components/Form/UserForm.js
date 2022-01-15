@@ -1,6 +1,9 @@
 import { Input } from "@mui/material";
 import { useState } from "react";
 import "./f.css";
+import { useDispatch } from "react-redux";
+import { add_user } from "../redux/actions/user.action";
+import axios from "axios";
 
 const UserForm = () => {
   const [firstname, setFirst] = useState("");
@@ -8,6 +11,8 @@ const UserForm = () => {
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState(0);
   const [address, setAddress] = useState("");
+
+  const dispu = useDispatch();
 
   const submitHandler = () => {
     if (firstname.length === 0) {
@@ -21,8 +26,18 @@ const UserForm = () => {
     } else if (contact.toString().length < 10) {
       alert("Invalid Input/ or Feild Empty");
     } else {
-      alert("Successful");
-      //api call
+      axios
+        .post("https://sixty-three-project-backend.herokuapp.com/user/create", {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          contactNo: contact,
+          address: address,
+        })
+        .then((res) => {
+          dispu(add_user(res.data));
+          alert("Successful");
+        });
     }
   };
 
