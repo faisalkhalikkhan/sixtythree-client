@@ -8,6 +8,7 @@ function App() {
       <NavBar />
       <section>
         <h1>Main Feed</h1>
+        <br />
         <div className="box">
           <Feed />
         </div>
