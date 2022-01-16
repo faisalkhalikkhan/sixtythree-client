@@ -10,3 +10,9 @@ export const add_user = (payload) => {
     payload: payload
   }
 }
+export const delete_user = (id) => {
+  return {
+    type: "DELETE_USER",
+    payload: id
+  }
+}

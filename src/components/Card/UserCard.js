@@ -5,9 +5,17 @@ import { Divider, IconButton, Popover } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useDispatch } from "react-redux";
+import { delete_user } from "../redux/actions/user.action";
+import axios from "axios";
+import { edit_user } from "../redux/actions/edit.action";
 
-const UserCard = ({ name, email, contact, address }) => {
+import { useNavigate } from "react-router-dom";
+
+const UserCard = ({ uid, name, email, contact, address, user }) => {
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const nevigate = useNavigate();
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -107,11 +115,28 @@ const UserCard = ({ name, email, contact, address }) => {
         }}
       >
         <div style={{ width: "120px", height: "120px", padding: "10px" }}>
-          <div className="popItem">
+          <div
+            className="popItem"
+            onClick={() => {
+              dispatch(edit_user(user));
+              nevigate("/edit");
+            }}
+          >
             <EditIcon /> <h4>Edit</h4>{" "}
           </div>
           <Divider />
-          <div className="popItem">
+          <div
+            className="popItem"
+            onClick={() => {
+              axios
+                .delete(
+                  `https://sixty-three-project-backend.herokuapp.com/user/remove/${uid}`
+                )
+                .then((res) => {
+                  dispatch(delete_user(uid));
+                });
+            }}
+          >
             <DeleteIcon /> <h4>Delete</h4>{" "}
           </div>
         </div>

@@ -1,0 +1,15 @@
+.create__cbtn {
+  margin-top: 15px;
+  border: none;
+  height: 50px;
+  width: 120px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #8946a6;
+  color: #ffcddd;
+  font-weight: 600;
+}
+.create__cbtn:hover {
+  background-color: #b762c1;
+  color: #8946a6;
+}

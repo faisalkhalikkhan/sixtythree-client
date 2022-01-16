@@ -7,9 +7,8 @@ export const Users = (state = init, action) => {
       state = [...state, action.payload];
       return state;
     case "DELETE_USER":
-      return {
-        state: state.filter((item) => item.id !== action.payload),
-      };
+      state = state.filter((item) => item._id !== action.payload);
+      return state;
     default:
       return state;
   }
