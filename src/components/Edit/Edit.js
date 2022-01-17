@@ -3,7 +3,7 @@ import "./e.css";
 import { Input } from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add_user } from "../redux/actions/user.action";
+import { add_user, update_user } from "../redux/actions/user.action";
 import { make_it_null } from "../redux/actions/edit.action";
 import axios from "axios";
 
@@ -44,10 +44,18 @@ const Edit = () => {
           }
         )
         .then((res) => {
-          dispu(add_user(res.data));
-          dispu(make_it_null());
+          dispu(
+            update_user({
+              _id: data._id,
+              firstname: firstname,
+              lastname: lastname,
+              email: email,
+              contactNo: contact,
+              address: address,
+            })
+          );
           alert("Successful");
-        })
+        });
 
       nevigate("/");
     }
